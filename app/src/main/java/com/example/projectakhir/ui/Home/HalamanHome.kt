@@ -23,7 +23,7 @@ import com.example.projectakhir.R
 
 @Composable
 fun HalamanHome(
-    onNextButtonClicked: () -> Unit
+    //
 ) {
     val image = painterResource(id = R.drawable.logopinjol)
     Column(
