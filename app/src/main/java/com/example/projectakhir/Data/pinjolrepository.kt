@@ -49,7 +49,7 @@ class CustomerRepositoryImpl(private val firestore: FirebaseFirestore) : Custome
     }
 
     override suspend fun delete(customerId: String) {
-        TODO("Not yet implemented")
+        firestore.collection("Customer").document(customerId).delete().await()
     }
 
     override fun getCustomerById(anggotaId: String): Flow<Customer> {
