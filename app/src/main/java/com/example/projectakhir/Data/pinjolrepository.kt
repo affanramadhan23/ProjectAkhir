@@ -1,5 +1,7 @@
 package com.example.projectakhir.Data
 
+import android.content.ContentValues
+import android.util.Log
 import com.example.projectakhir.model.Customer
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
@@ -29,7 +31,17 @@ class CustomerRepositoryImpl(private val firestore: FirebaseFirestore) : Custome
     }.flowOn(Dispatchers.IO)
 
     override suspend fun save(customer: Customer): String {
-        TODO("Not yet implemented")
+        return try {
+            val documentReference = firestore.collection("Customer")
+                .add(customer)
+                .await()
+            firestore.collection("Customer").document(documentReference.id)
+                .set(customer.copy(id = documentReference.id))
+            "Berhasil + ${documentReference.id}"
+        } catch (e: Exception) {
+            Log.w(ContentValues.TAG, "Error adding document", e)
+            "Gagal $e"
+        }
     }
 
     override suspend fun update(customer: Customer) {
