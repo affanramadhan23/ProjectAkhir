@@ -2,4 +2,6 @@
     <string name="app_name">ProjectAkhir</string>
     <string name="pinjol">Pinjol</string>
     <string name="pinjaman">Pinjaman</string>
+    <string name="laki">Laki-Laki</string>
+    <string name="perempuan">Perempuan</string>
 </resources>
