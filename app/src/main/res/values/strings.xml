@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ProjectAkhir</string>
+    <string name="pinjol">Pinjol</string>
+    <string name="pinjaman">Pinjaman</string>
 </resources>
