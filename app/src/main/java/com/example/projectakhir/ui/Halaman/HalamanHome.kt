@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.Home
+package com.example.projectakhir.ui.Halaman
 
 import android.media.Image
 import androidx.compose.foundation.Image

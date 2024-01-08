@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.Home
+package com.example.projectakhir.ui.Halaman
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
