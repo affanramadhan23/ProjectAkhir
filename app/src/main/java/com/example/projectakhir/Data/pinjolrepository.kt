@@ -24,8 +24,8 @@ class CustomerRepositoryImpl(private val firestore: FirebaseFirestore) : Custome
             .orderBy("nama", Query.Direction.ASCENDING)
             .get()
             .await()
-        val anggota = snapshot.toObjects(Customer::class.java)
-        emit(anggota)
+        val customer = snapshot.toObjects(Customer::class.java)
+        emit(customer)
     }.flowOn(Dispatchers.IO)
 
     override suspend fun save(customer: Customer): String {
