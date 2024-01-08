@@ -53,6 +53,10 @@ class CustomerRepositoryImpl(private val firestore: FirebaseFirestore) : Custome
     }
 
     override fun getCustomerById(anggotaId: String): Flow<Customer> {
-        TODO("Not yet implemented")
+        return flow {
+            val snapshot = firestore.collection("Anggota").document(anggotaId).get().await()
+            val customer = snapshot.toObject(Customer::class.java)
+            emit(customer!!)
+        }.flowOn(Dispatchers.IO)
     }
 }
