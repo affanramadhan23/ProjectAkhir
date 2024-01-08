@@ -45,7 +45,7 @@ class CustomerRepositoryImpl(private val firestore: FirebaseFirestore) : Custome
     }
 
     override suspend fun update(customer: Customer) {
-        TODO("Not yet implemented")
+        firestore.collection("Customer").document(customer.id).set(customer).await()
     }
 
     override suspend fun delete(customerId: String) {
