@@ -4,6 +4,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.projectakhir.Data.CustomerRepository
 import com.example.projectakhir.Navigation.DestinasiNavigasi
+import com.example.projectakhir.model.Customer
 
 
 object DestinasiHome : DestinasiNavigasi {
@@ -17,4 +18,10 @@ fun CustomerScreen(
     navigateToItemEntryCustomerRepository: () -> Unit,
     modifier: Modifier = Modifier,
     onDetailClick: (String) -> Unit = {},
+) {}
+
+@Composable
+fun DataCustomer(
+    customer: Customer,
+    modifier: Modifier = Modifier
 ) {}
