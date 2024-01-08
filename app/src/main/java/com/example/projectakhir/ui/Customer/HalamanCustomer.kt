@@ -16,7 +16,9 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.projectakhir.Data.CustomerRepository
 import com.example.projectakhir.Navigation.DestinasiNavigasi
@@ -35,7 +37,24 @@ fun CustomerScreen(
     modifier: Modifier = Modifier,
     onDetailClick: (String) -> Unit = {},
 ) {}
-
+@Composable
+fun BodyHomeCustomer(
+    itemAnggota: List<Customer>,
+    modifier: Modifier = Modifier,
+) {
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        modifier = modifier
+    ) {
+        if (itemAnggota.isEmpty()) {
+            Text(
+                text = "Tidak ada data Anggota",
+                textAlign = TextAlign.Center,
+                style = MaterialTheme.typography.titleLarge
+            )
+        }
+    }
+}
 @Composable
 fun DataCustomer(
     customer: Customer,
