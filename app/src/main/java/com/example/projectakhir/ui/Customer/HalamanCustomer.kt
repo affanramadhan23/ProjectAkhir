@@ -42,18 +42,26 @@ fun CustomerScreen(
 ) {}
 @Composable
 fun BodyHomeCustomer(
-    itemAnggota: List<Customer>,
+    itemCustomer: List<Customer>,
     modifier: Modifier = Modifier,
+    onCustomerClick: (String) -> Unit = {}
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = modifier
     ) {
-        if (itemAnggota.isEmpty()) {
+        if (itemCustomer.isEmpty()) {
             Text(
                 text = "Tidak ada data Anggota",
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.titleLarge
+            )
+        } else {
+            ListCustomer(
+                itemCustomer = itemCustomer,
+                modifier = Modifier
+                    .padding(horizontal = 8.dp),
+                onItemClick = { onCustomerClick(it.id) }
             )
         }
     }
