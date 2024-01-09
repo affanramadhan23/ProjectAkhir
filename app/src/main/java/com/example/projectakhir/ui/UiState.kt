@@ -34,3 +34,6 @@ fun AddEvent.toCustomer() = Customer(
     pinjamandana = pinjamandana,
     barangjaminan = barangjaminan
 )
+
+data class AddUIState(
+    val addEvent: AddEvent = AddEvent(),
