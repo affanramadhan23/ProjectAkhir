@@ -3,7 +3,7 @@ package com.example.projectakhir.ui
 import com.example.projectakhir.model.Customer
 
 data class HomeUIState(
-    val listAnggota: List<Customer> = listOf(),
+    val listCustomer: List<Customer> = listOf(),
     val dataLength: Int = 0
 )
 data class AddEvent(
