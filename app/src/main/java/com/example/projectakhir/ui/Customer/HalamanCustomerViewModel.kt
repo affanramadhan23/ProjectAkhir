@@ -17,7 +17,7 @@ sealed class CustomerUIState {
     object Error : CustomerUIState()
     object Loading : CustomerUIState()
 }
-class HomeViewModel(private val CustomerRepository: CustomerRepository) : ViewModel() {
+class HalamanCustomerViewModel      (private val CustomerRepository: CustomerRepository) : ViewModel() {
     companion object {
         private const val TIMEOUT_MILLIS = 6_000L
     }

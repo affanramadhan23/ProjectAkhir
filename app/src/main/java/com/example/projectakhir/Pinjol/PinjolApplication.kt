@@ -4,8 +4,7 @@ import android.app.Application
 import com.example.projectakhir.Data.AppContainer
 import com.example.projectakhir.Data.pinjolContainer
 
-class PinjolApplication {
-    class PerpusAplication : Application() {
+class PinjolApplication : Application() {
         lateinit var container: AppContainer
 
         override fun onCreate() {
@@ -13,5 +12,4 @@ class PinjolApplication {
 
             container = pinjolContainer()
         }
-    }
 }
