@@ -34,6 +34,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.projectakhir.Data.CustomerRepository
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
+import com.example.projectakhir.ui.CustomerTopAppBar
 import com.example.projectakhir.ui.PenyediaViewModel
 
 
@@ -54,6 +55,13 @@ fun CustomerScreen(
 
     Scaffold(
         modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+        topBar = {
+            CustomerTopAppBar(
+                title = "Customer",
+                canNavigateBack = false,
+                scrollBehavior = scrollBehavior
+            )
+        }
     ) { innerPadding ->
         val uiStateCustomer by viewModel.homeUIState.collectAsState()
         BodyHomeCustomer(
