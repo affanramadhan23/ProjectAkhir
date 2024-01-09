@@ -5,7 +5,7 @@ data class Customer(
     val nama: String,
     val alamat: String,
     val jk: String,
-    val noHp: String,
+    val nohp: String,
     val pinjamandana: String,
     val barangjaminan: String
 ) {

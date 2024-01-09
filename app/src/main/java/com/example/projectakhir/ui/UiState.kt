@@ -15,3 +15,13 @@ data class AddEvent(
     val pinjamandana:  String = "",
     val barangjaminan: String = ""
 )
+fun Customer.toDetailCustomer(): AddEvent =
+    AddEvent(
+        id = id,
+        nama = nama,
+        alamat = alamat,
+        jk = jk,
+        nohp = nohp,
+        pinjamandana = pinjamandana,
+        barangjaminan = barangjaminan
+    )
