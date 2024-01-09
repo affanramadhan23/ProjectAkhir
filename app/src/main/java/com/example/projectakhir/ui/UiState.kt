@@ -37,3 +37,7 @@ fun AddEvent.toCustomer() = Customer(
 
 data class AddUIState(
     val addEvent: AddEvent = AddEvent(),
+)
+fun Customer.toUIStateCustomer(): AddUIState = AddUIState(
+    addEvent = this.toDetailCustomer()
+)
