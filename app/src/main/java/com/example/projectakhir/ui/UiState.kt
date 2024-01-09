@@ -25,3 +25,12 @@ fun Customer.toDetailCustomer(): AddEvent =
         pinjamandana = pinjamandana,
         barangjaminan = barangjaminan
     )
+fun AddEvent.toCustomer() = Customer(
+    id = id,
+    nama = nama,
+    alamat = alamat,
+    jk = jk,
+    nohp = nohp,
+    pinjamandana = pinjamandana,
+    barangjaminan = barangjaminan
+)
