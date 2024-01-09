@@ -24,6 +24,11 @@ object AddCustomer {
         override val titleRes = "Entry Customer"
     }
     @Composable
+    fun AddCustomer(
+        navigateBack: () -> Unit,
+        modifier: Modifier = Modifier,
+    ) {}
+    @Composable
     fun EntryBodyCustomer(
         addUIStateCustomer: AddUIStateCustomer,
         onCustomerValueChange: (AddEventCustomer) -> Unit,
