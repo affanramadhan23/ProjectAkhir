@@ -25,9 +25,11 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.projectakhir.Data.CustomerRepository
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
+import com.example.projectakhir.ui.PenyediaViewModel
 
 
 object DestinasiHome : DestinasiNavigasi {
@@ -41,6 +43,7 @@ fun CustomerScreen(
     navigateToItemEntryCustomerRepository: () -> Unit,
     modifier: Modifier = Modifier,
     onDetailClick: (String) -> Unit = {},
+    viewModel: HalamanCustomerViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
 }
@@ -116,7 +119,7 @@ fun DataCustomer(
                     contentDescription = null,
                 )
                 Text(
-                    text = customer.noHp,
+                    text = customer.nohp,
                     style = MaterialTheme.typography.titleMedium
                 )
             }
