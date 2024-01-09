@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projectakhir.Data.CustomerRepository
 import com.example.projectakhir.model.Customer
-import com.example.projectakhir.ui.HomeUIState
+import com.example.projectakhir.ui.HomeUIStateCustomer
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow
@@ -22,14 +22,14 @@ class HalamanCustomerViewModel      (private val CustomerRepository: CustomerRep
         private const val TIMEOUT_MILLIS = 6_000L
     }
 
-    val homeUIState: StateFlow<HomeUIState> = CustomerRepository.getAll()
+    val homeUIState: StateFlow<HomeUIStateCustomer> = CustomerRepository.getAll()
         .filterNotNull()
         .map {
-            HomeUIState (listAnggota = it.toList(), it.size)
+            HomeUIStateCustomer (listCustomer = it.toList(), it.size)
         }
         .stateIn(
             scope = viewModelScope,
             started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
-            initialValue = HomeUIState()
+            initialValue = HomeUIStateCustomer()
         )
 }

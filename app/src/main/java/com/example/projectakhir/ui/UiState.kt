@@ -2,11 +2,11 @@ package com.example.projectakhir.ui
 
 import com.example.projectakhir.model.Customer
 
-data class HomeUIState(
+data class HomeUIStateCustomer(
     val listCustomer: List<Customer> = listOf(),
     val dataLength: Int = 0
 )
-data class AddEvent(
+data class AddEventCustomer(
     val id: String = "",
     val nama: String = "",
     val alamat: String = "",
@@ -15,8 +15,8 @@ data class AddEvent(
     val pinjamandana:  String = "",
     val barangjaminan: String = ""
 )
-fun Customer.toDetailCustomer(): AddEvent =
-    AddEvent(
+fun Customer.toDetailCustomer(): AddEventCustomer =
+    AddEventCustomer(
         id = id,
         nama = nama,
         alamat = alamat,
@@ -25,7 +25,7 @@ fun Customer.toDetailCustomer(): AddEvent =
         pinjamandana = pinjamandana,
         barangjaminan = barangjaminan
     )
-fun AddEvent.toCustomer() = Customer(
+fun AddEventCustomer.toCustomer() = Customer(
     id = id,
     nama = nama,
     alamat = alamat,
@@ -35,12 +35,12 @@ fun AddEvent.toCustomer() = Customer(
     barangjaminan = barangjaminan
 )
 
-data class AddUIState(
-    val addEvent: AddEvent = AddEvent(),
+data class AddUIStateCustomer(
+    val addEventCustomer: AddEventCustomer = AddEventCustomer(),
 )
-fun Customer.toUIStateCustomer(): AddUIState = AddUIState(
-    addEvent = this.toDetailCustomer()
+fun Customer.toUIStateCustomer(): AddUIStateCustomer = AddUIStateCustomer(
+    addEventCustomer = this.toDetailCustomer()
 )
-data class DetailUIState(
-    val addEvent: AddEvent = AddEvent(),
+data class DetailUIStateCustomer(
+    val addEventCustomer: AddEventCustomer = AddEventCustomer(),
 )
