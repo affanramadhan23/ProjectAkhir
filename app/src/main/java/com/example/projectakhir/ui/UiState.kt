@@ -41,3 +41,6 @@ data class AddUIState(
 fun Customer.toUIStateCustomer(): AddUIState = AddUIState(
     addEvent = this.toDetailCustomer()
 )
+data class DetailUIState(
+    val addEvent: AddEvent = AddEvent(),
+)
