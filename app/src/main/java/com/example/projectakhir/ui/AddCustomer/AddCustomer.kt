@@ -3,8 +3,11 @@ package com.example.projectakhir.ui.AddCustomer
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.material3.Button
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -26,13 +29,32 @@ object AddCustomer {
         onCustomerValueChange: (AddEventCustomer) -> Unit,
         onSaveClickCustomer: () -> Unit,
         modifier: Modifier = Modifier
-    ) {}
+    ) {
+        Column(
+            verticalArrangement = Arrangement.spacedBy(12.dp),
+            modifier = modifier.padding(12.dp)
+        ) {
+            FormInputCustomer(
+                addEventCustomer = addUIStateCustomer.addEventCustomer,
+                onValueChangeCustomer = onCustomerValueChange,
+                modifier = Modifier.fillMaxWidth()
+            )
+
+            Button(
+                onClick = onSaveClickCustomer,
+                shape = MaterialTheme.shapes.small,
+                modifier = Modifier.fillMaxWidth()
+            ) {
+                Text(text = "Submit")
+            }
+        }
+    }
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun FormInputCustomer(
         addEventCustomer: AddEventCustomer,
         modifier: Modifier = Modifier,
-        onValueChange: (AddEventCustomer) -> Unit = {},
+        onValueChangeCustomer: (AddEventCustomer) -> Unit = {},
         enabled: Boolean = true
     ) {
         Column(
@@ -41,7 +63,7 @@ object AddCustomer {
         ) {
             OutlinedTextField(
                 value = addEventCustomer.nama,
-                onValueChange = { onValueChange(addEventCustomer.copy(nama = it)) },
+                onValueChange = { onValueChangeCustomer(addEventCustomer.copy(nama = it)) },
                 label = { Text("Nama") },
                 modifier = Modifier.fillMaxWidth(),
                 enabled = enabled,
@@ -50,7 +72,7 @@ object AddCustomer {
 
             OutlinedTextField(
                 value = addEventCustomer.alamat,
-                onValueChange = { onValueChange(addEventCustomer.copy(alamat = it)) },
+                onValueChange = { onValueChangeCustomer(addEventCustomer.copy(alamat = it)) },
                 label = { Text("Alamat") },
                 modifier = Modifier.fillMaxWidth(),
                 enabled = enabled,
@@ -59,7 +81,7 @@ object AddCustomer {
 
             OutlinedTextField(
                 value = addEventCustomer.jk,
-                onValueChange = { onValueChange(addEventCustomer.copy(jk = it)) },
+                onValueChange = { onValueChangeCustomer(addEventCustomer.copy(jk = it)) },
                 label = { Text("Jenis Kelamin") },
                 modifier = Modifier.fillMaxWidth(),
                 enabled = enabled,
@@ -68,7 +90,7 @@ object AddCustomer {
 
             OutlinedTextField(
                 value = addEventCustomer.nohp,
-                onValueChange = { onValueChange(addEventCustomer.copy(nohp = it)) },
+                onValueChange = { onValueChangeCustomer(addEventCustomer.copy(nohp = it)) },
                 keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Number),
                 label = { Text(text = "Nomor Telepon") },
                 modifier = Modifier.fillMaxWidth(),
@@ -77,7 +99,7 @@ object AddCustomer {
             )
             OutlinedTextField(
                 value = addEventCustomer.pinjamandana,
-                onValueChange = { onValueChange(addEventCustomer.copy(pinjamandana = it)) },
+                onValueChange = { onValueChangeCustomer(addEventCustomer.copy(pinjamandana = it)) },
                 label = { Text("Pinjaman Dana") },
                 modifier = Modifier.fillMaxWidth(),
                 enabled = enabled,
@@ -86,7 +108,7 @@ object AddCustomer {
 
             OutlinedTextField(
                 value = addEventCustomer.barangjaminan,
-                onValueChange = { onValueChange(addEventCustomer.copy(barangjaminan = it)) },
+                onValueChange = { onValueChangeCustomer(addEventCustomer.copy(barangjaminan = it)) },
                 label = { Text("Barang Jaminan") },
                 modifier = Modifier.fillMaxWidth(),
                 enabled = enabled,
