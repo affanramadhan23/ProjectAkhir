@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.Customer
+package com.example.projectakhir.ui.HomeCustomer
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -33,7 +33,6 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.projectakhir.Data.CustomerRepository
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
 import com.example.projectakhir.ui.CustomerTopAppBar

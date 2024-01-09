@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.Customer
+package com.example.projectakhir.ui.HomeCustomer
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
