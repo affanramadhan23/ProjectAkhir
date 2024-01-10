@@ -13,6 +13,12 @@ object DetailDestinationCustomer : DestinasiNavigasi {
     const val customerId = "itemCustomerId"
     val routeWithArgs = "$route/{${customerId}"
 }
+@Composable
+private fun ItemDetailsRowCustomer(
+    labelResIDCustomer: String,
+    itemDetailCustomer: String,
+    modifier: Modifier = Modifier
+) {}
 
 @Composable
 private fun DeleteConfirmationDialog(
