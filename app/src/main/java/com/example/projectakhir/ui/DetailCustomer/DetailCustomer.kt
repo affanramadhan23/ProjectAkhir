@@ -1,13 +1,21 @@
 package com.example.projectakhir.ui.DetailCustomer
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
 
@@ -21,7 +29,68 @@ object DetailDestinationCustomer : DestinasiNavigasi {
 fun ItemDetails(
     customer: Customer,
     modifier: Modifier = Modifier
-) {}
+) {
+    Card(
+        modifier = modifier,
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.primaryContainer,
+            contentColor = MaterialTheme.colorScheme.onPrimaryContainer
+        )
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(12.dp),
+            verticalArrangement = Arrangement.spacedBy(12.dp)
+        ) {
+            ItemDetailsRowCustomer(
+                labelResIDCustomer = "Nama",
+                itemDetailCustomer = customer.nama,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+
+            ItemDetailsRowCustomer(
+                labelResIDCustomer = "Alamat",
+                itemDetailCustomer = customer.alamat,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+
+            ItemDetailsRowCustomer(
+                labelResIDCustomer = "Jenis Kelamin",
+                itemDetailCustomer = customer.jk,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+
+            ItemDetailsRowCustomer(
+                labelResIDCustomer = "Nomor Telepon",
+                itemDetailCustomer = customer.nohp,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+            ItemDetailsRowCustomer(
+                labelResIDCustomer = "Pinjaman Dana",
+                itemDetailCustomer = customer.pinjamandana,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+            ItemDetailsRowCustomer(
+                labelResIDCustomer = "Barang Jaminan",
+                itemDetailCustomer = customer.barangjaminan,
+                modifier = Modifier.padding(
+                    horizontal = 12.dp
+                )
+            )
+        }
+    }
+}
 
 @Composable
 private fun ItemDetailsRowCustomer(
