@@ -8,10 +8,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.FloatingActionButton
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Scaffold
@@ -30,6 +34,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
+import com.example.projectakhir.ui.CustomerTopAppBar
 import com.example.projectakhir.ui.DetailUIStateCustomer
 import com.example.projectakhir.ui.PenyediaViewModel
 import com.example.projectakhir.ui.toCustomer
@@ -52,7 +57,26 @@ fun DetailScreenCustomer(
     val uiStateCustomer = viewModel.uiStateCustomer.collectAsState()
     val coroutineScope = rememberCoroutineScope()
 
-    Scaffold() { innerPadding ->
+    Scaffold(
+        topBar = {
+            CustomerTopAppBar(
+                title = DetailDestinationCustomer.titleRes,
+                canNavigateBack = true,
+                navigateUp = navigateBack
+            )
+        }, floatingActionButton = {
+            FloatingActionButton(
+                onClick = { navigateToEditItemCustomer(uiStateCustomer.value.addEventCustomer.id) },
+                shape = MaterialTheme.shapes.medium,
+                modifier = Modifier.padding(18.dp)
+            ) {
+                Icon(
+                    imageVector = Icons.Default.Edit,
+                    contentDescription = "",
+                )
+            }
+        }
+    ) { innerPadding ->
         ItemDetailsBodyCustomer(
             detailUIStateCustomer = uiStateCustomer.value,
             onDeleteCustomer = {
