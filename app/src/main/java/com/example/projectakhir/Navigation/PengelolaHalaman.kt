@@ -63,7 +63,7 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
             customerId?.let {
                 DetailScreenCustomer(
                     navigateToEditItemCustomer = {},
-                    navigateBack = { /*TODO*/ })
+                    navigateBack = {navController.popBackStack()})
             }
         }
         composable(DestinasiEntryCustomer.route) {
