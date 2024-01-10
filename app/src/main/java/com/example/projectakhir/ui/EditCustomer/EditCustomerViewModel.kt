@@ -14,4 +14,5 @@ class EditCustomerViewModel(
 ) : ViewModel() {
     var customerUIState by mutableStateOf(AddUIStateCustomer())
         private set
+    private val customerId: String = checkNotNull(savedStateHandle[EditDestinationCustomer.customerId])
 }
