@@ -13,12 +13,17 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
 import com.example.projectakhir.ui.DetailUIStateCustomer
+import com.example.projectakhir.ui.toCustomer
 
 object DetailDestinationCustomer : DestinasiNavigasi {
     override val route = "item_details_customer"
@@ -31,9 +36,20 @@ private fun ItemDetailsBodyCustomer(
     detailUIStateCustomer: DetailUIStateCustomer,
     onDeleteCustomer: () -> Unit,
     modifier: Modifier = Modifier
-) {}
+) {
+    Column(
+        modifier = modifier.padding(12.dp),
+        verticalArrangement = Arrangement.spacedBy(12.dp)
+    ) {
+        var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }
+        ItemDetailsCustomer(
+            customer = detailUIStateCustomer.addEventCustomer.toCustomer(),
+            modifier = Modifier.fillMaxWidth()
+        )
+    }
+}
 @Composable
-fun ItemDetails(
+fun ItemDetailsCustomer(
     customer: Customer,
     modifier: Modifier = Modifier
 ) {
