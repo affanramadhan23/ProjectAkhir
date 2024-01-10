@@ -19,11 +19,16 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.R
 
+object DestinasiHome : DestinasiNavigasi {
+    override val route = "Home"
+    override val titleRes = "Pilih"
+}
 @Composable
 fun HalamanHome(
-    //
+    onNextButtonClicked: () -> Unit
 ) {
     val image = painterResource(id = R.drawable.logopinjol)
     Column(
@@ -61,7 +66,7 @@ fun HalamanHome(
                 .height(200.dp)
         )
         Button(
-            onClick = {  },
+            onClick = onNextButtonClicked,
             modifier = Modifier
                 .fillMaxWidth()
                 .padding(vertical = 16.dp)

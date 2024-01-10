@@ -39,7 +39,7 @@ import com.example.projectakhir.ui.CustomerTopAppBar
 import com.example.projectakhir.ui.PenyediaViewModel
 
 
-object DestinasiHome : DestinasiNavigasi {
+object DestinasiHomeCustomer : DestinasiNavigasi {
     override val route = "home"
     override val titleRes = "Customer"
 }
@@ -49,7 +49,7 @@ object DestinasiHome : DestinasiNavigasi {
 fun CustomerScreen(
     navigateToItemEntryCustomer: () -> Unit,
     modifier: Modifier = Modifier,
-    onDetailClick: (String) -> Unit = {},
+    onDetailClickCustomer: (String) -> Unit = {},
     viewModel: HalamanCustomerViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val scrollBehavior = TopAppBarDefaults.enterAlwaysScrollBehavior()
@@ -65,7 +65,7 @@ fun CustomerScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = navigateToItemEntryCustomer,
+                onClick ={ navigateToItemEntryCustomer() },
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(18.dp)
             ) {
@@ -82,7 +82,7 @@ fun CustomerScreen(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize(),
-            onCustomerClick = onDetailClick
+            onCustomerClick = onDetailClickCustomer
         )
     }
 }

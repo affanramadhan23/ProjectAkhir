@@ -28,11 +28,10 @@ import com.example.projectakhir.ui.CustomerTopAppBar
 import com.example.projectakhir.ui.PenyediaViewModel
 import kotlinx.coroutines.launch
 
-object AddCustomer {
-    object DestinasiEntry : DestinasiNavigasi {
-        override val route = "item_entry"
-        override val titleRes = "Entry Customer"
-    }
+object DestinasiEntryCustomer : DestinasiNavigasi {
+    override val route = "item entry customer"
+    override val titleRes = "Entry Customer"
+}
     @OptIn(ExperimentalMaterial3Api::class)
     @Composable
     fun AddCustomer(
@@ -47,7 +46,7 @@ object AddCustomer {
             modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
             topBar = {
                 CustomerTopAppBar(
-                    title = DestinasiEntry.titleRes,
+                    title = DestinasiEntryCustomer.titleRes,
                     canNavigateBack = true,
                     scrollBehavior = scrollBehavior,
                     navigateUp = navigateBack
@@ -163,4 +162,3 @@ object AddCustomer {
             )
         }
     }
-}

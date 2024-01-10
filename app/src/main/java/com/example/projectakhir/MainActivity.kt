@@ -11,6 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.projectakhir.ui.Halaman.HalamanUtama
+import com.example.projectakhir.ui.PinjolApp
 import com.example.projectakhir.ui.theme.ProjectAkhirTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +24,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    HalamanUtama()
+                    PinjolApp()
                 }
             }
         }

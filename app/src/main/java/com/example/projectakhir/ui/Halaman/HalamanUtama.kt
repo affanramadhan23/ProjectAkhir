@@ -18,10 +18,17 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.R
 
+object DestinasiUtama : DestinasiNavigasi {
+    override val route = "Item"
+    override val titleRes = "Pilih"
+}
 @Composable
-fun HalamanUtama() {
+fun HalamanUtama(
+    onCustomerClick: () -> Unit,
+) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
@@ -57,7 +64,7 @@ fun HalamanUtama() {
         Spacer(modifier = Modifier.height(20.dp))
 
         Button(
-            onClick = { },
+            onClick = onCustomerClick,
             modifier = Modifier
                 .fillMaxWidth()
                 .height(72.dp)
