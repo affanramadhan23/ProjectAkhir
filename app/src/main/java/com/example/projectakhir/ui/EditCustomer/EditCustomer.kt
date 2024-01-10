@@ -1,6 +1,7 @@
 package com.example.projectakhir.ui.EditCustomer
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 
@@ -15,4 +16,6 @@ fun EditScreenCustomer(
     navigateBackCustomer: () -> Unit,
     onNavigateUpCustomer: () -> Unit,
     modifier: Modifier = Modifier,
-) {}
+) {
+    val coroutineScope = rememberCoroutineScope()
+}
