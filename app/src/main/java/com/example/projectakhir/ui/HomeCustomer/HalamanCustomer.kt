@@ -128,6 +128,7 @@ fun ListCustomer(
                     .fillMaxWidth()
                     .clickable { onItemClick(customer) }
             )
+            Spacer(modifier = Modifier.padding(8.dp))
         }
     }
 }
