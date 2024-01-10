@@ -33,6 +33,13 @@ object DetailDestinationCustomer : DestinasiNavigasi {
     val routeWithArgs = "$route/{${customerId}"
 }
 @Composable
+fun DetailScreenCustomer(
+    navigateToEditItemCustomer: (String) -> Unit,
+    navigateBack: () -> Unit,
+    modifier: Modifier = Modifier,
+) {}
+
+@Composable
 private fun ItemDetailsBodyCustomer(
     detailUIStateCustomer: DetailUIStateCustomer,
     onDeleteCustomer: () -> Unit,
