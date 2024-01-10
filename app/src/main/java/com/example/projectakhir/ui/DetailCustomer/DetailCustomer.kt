@@ -6,11 +6,15 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -29,6 +33,7 @@ import com.example.projectakhir.model.Customer
 import com.example.projectakhir.ui.DetailUIStateCustomer
 import com.example.projectakhir.ui.PenyediaViewModel
 import com.example.projectakhir.ui.toCustomer
+import kotlinx.coroutines.launch
 
 object DetailDestinationCustomer : DestinasiNavigasi {
     override val route = "item_details_customer"
@@ -36,6 +41,7 @@ object DetailDestinationCustomer : DestinasiNavigasi {
     const val customerId = "itemCustomerId"
     val routeWithArgs = "$route/{${customerId}"
 }
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun DetailScreenCustomer(
     navigateToEditItemCustomer: (String) -> Unit,
@@ -44,7 +50,22 @@ fun DetailScreenCustomer(
     viewModel: DetailCustomerViewModel = viewModel(factory = PenyediaViewModel.Factory)
 ) {
     val uiStateCustomer = viewModel.uiStateCustomer.collectAsState()
-    val coroutine = rememberCoroutineScope()
+    val coroutineScope = rememberCoroutineScope()
+
+    Scaffold() { innerPadding ->
+        ItemDetailsBodyCustomer(
+            detailUIStateCustomer = uiStateCustomer.value,
+            onDeleteCustomer = {
+                coroutineScope.launch {
+                    viewModel.deleteCustomer()
+                    navigateBack()
+                }
+            },
+            modifier = Modifier
+                .padding(innerPadding)
+                .verticalScroll(rememberScrollState()),
+        )
+    }
 }
 
 @Composable
