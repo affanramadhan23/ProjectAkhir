@@ -7,4 +7,8 @@ import com.example.projectakhir.Data.CustomerRepository
 class DetailCustomerViewModel(
     savedStateHandle: SavedStateHandle,
     private val repository: CustomerRepository
-) : ViewModel() {}
+) : ViewModel() {
+    companion object {
+        private const val TIMEOUT_MILLIS = 6_000L
+    }
+}
