@@ -24,6 +24,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.ui.AddEventCustomer
 import com.example.projectakhir.ui.AddUIStateCustomer
+import com.example.projectakhir.ui.CustomerTopAppBar
 import com.example.projectakhir.ui.PenyediaViewModel
 import kotlinx.coroutines.launch
 
@@ -44,6 +45,14 @@ object AddCustomer {
 
         Scaffold(
             modifier = modifier.nestedScroll(scrollBehavior.nestedScrollConnection),
+            topBar = {
+                CustomerTopAppBar(
+                    title = DestinasiEntry.titleRes,
+                    canNavigateBack = true,
+                    scrollBehavior = scrollBehavior,
+                    navigateUp = navigateBack
+                )
+            }
         ) { innerPadding ->
             EntryBodyCustomer(
                 addUIStateCustomer = addCustomerViewModel.addUIStateCustomer,
