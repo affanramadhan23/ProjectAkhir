@@ -9,6 +9,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.projectakhir.Data.CustomerRepository
 import com.example.projectakhir.ui.AddEventCustomer
 import com.example.projectakhir.ui.AddUIStateCustomer
+import com.example.projectakhir.ui.toCustomer
 import com.example.projectakhir.ui.toUIStateCustomer
 import kotlinx.coroutines.flow.filterNotNull
 import kotlinx.coroutines.flow.first
@@ -33,5 +34,8 @@ class EditCustomerViewModel(
     }
     fun updateUIStateCustomer(addEventCustomer: AddEventCustomer) {
         customerUIState = customerUIState.copy(addEventCustomer = addEventCustomer)
+    }
+    suspend fun updateCustomer() {
+        repository.update(customerUIState.addEventCustomer.toCustomer())
     }
 }
