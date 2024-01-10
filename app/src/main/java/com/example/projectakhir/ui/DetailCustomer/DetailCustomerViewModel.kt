@@ -32,5 +32,8 @@ class DetailCustomerViewModel(
                 started = SharingStarted.WhileSubscribed(TIMEOUT_MILLIS),
                 initialValue = DetailUIStateCustomer()
             )
+    suspend fun deleteCustomer() {
+        repository.delete(customerId)
+    }
 
 }
