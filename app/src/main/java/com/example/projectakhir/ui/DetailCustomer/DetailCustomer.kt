@@ -1,5 +1,7 @@
 package com.example.projectakhir.ui.DetailCustomer
 
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Modifier
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 
 object DetailDestinationCustomer : DestinasiNavigasi {
@@ -8,3 +10,10 @@ object DetailDestinationCustomer : DestinasiNavigasi {
     const val customerId = "itemCustomerId"
     val routeWithArgs = "$route/{${customerId}"
 }
+
+@Composable
+private fun DeleteConfirmationDialog(
+    onDeleteConfirmCustomer: () -> Unit,
+    onDeleteCancelCustomer: () -> Unit,
+    modifier: Modifier = Modifier
+) {}
