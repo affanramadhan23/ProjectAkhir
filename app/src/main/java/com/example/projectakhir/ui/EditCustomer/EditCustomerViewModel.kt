@@ -7,6 +7,7 @@ import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.projectakhir.Data.CustomerRepository
+import com.example.projectakhir.ui.AddEventCustomer
 import com.example.projectakhir.ui.AddUIStateCustomer
 import com.example.projectakhir.ui.toUIStateCustomer
 import kotlinx.coroutines.flow.filterNotNull
@@ -29,5 +30,8 @@ class EditCustomerViewModel(
                     .first()
                     .toUIStateCustomer()
         }
+    }
+    fun updateUIStateCustomer(addEventCustomer: AddEventCustomer) {
+        customerUIState = customerUIState.copy(addEventCustomer = addEventCustomer)
     }
 }
