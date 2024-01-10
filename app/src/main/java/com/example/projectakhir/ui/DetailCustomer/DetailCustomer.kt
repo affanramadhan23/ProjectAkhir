@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import com.example.projectakhir.Navigation.DestinasiNavigasi
+import com.example.projectakhir.model.Customer
 
 object DetailDestinationCustomer : DestinasiNavigasi {
     override val route = "item_details_customer"
@@ -16,6 +17,12 @@ object DetailDestinationCustomer : DestinasiNavigasi {
     const val customerId = "itemCustomerId"
     val routeWithArgs = "$route/{${customerId}"
 }
+@Composable
+fun ItemDetails(
+    customer: Customer,
+    modifier: Modifier = Modifier
+) {}
+
 @Composable
 private fun ItemDetailsRowCustomer(
     labelResIDCustomer: String,
