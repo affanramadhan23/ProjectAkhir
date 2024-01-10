@@ -10,6 +10,7 @@ import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.OutlinedButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
@@ -41,11 +42,29 @@ private fun ItemDetailsBodyCustomer(
         modifier = modifier.padding(12.dp),
         verticalArrangement = Arrangement.spacedBy(12.dp)
     ) {
-        var deleteConfirmationRequired by rememberSaveable { mutableStateOf(false) }
+        var deleteConfirmationRequiredCustomer   by rememberSaveable { mutableStateOf(false) }
         ItemDetailsCustomer(
             customer = detailUIStateCustomer.addEventCustomer.toCustomer(),
             modifier = Modifier.fillMaxWidth()
         )
+        OutlinedButton(
+            onClick = { deleteConfirmationRequiredCustomer = true },
+            shape = MaterialTheme.shapes.small,
+            modifier = Modifier.fillMaxWidth()
+        ) {
+            Text("Delete")
+        }
+
+        if (deleteConfirmationRequiredCustomer) {
+            DeleteConfirmationDialog(
+                onDeleteConfirmCustomer = {
+                    deleteConfirmationRequiredCustomer = false
+                    onDeleteCustomer()
+                },
+                onDeleteCancelCustomer = { deleteConfirmationRequiredCustomer = false },
+                modifier = Modifier.padding(12.dp)
+            )
+        }
     }
 }
 @Composable
