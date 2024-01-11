@@ -42,7 +42,6 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.projectakhir.Navigation.DestinasiNavigasi
 import com.example.projectakhir.R
-import com.example.projectakhir.ui.Halaman.DestinasiHome
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
@@ -55,7 +54,7 @@ object DestinasiHome : DestinasiNavigasi {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LoginScreen(
+fun HalamanHome(
     navController: NavController
 ) {
     val context = LocalContext.current
@@ -126,7 +125,7 @@ fun LoginScreen(
                         auth.signInWithEmailAndPassword(emailText, passwordText)
                             .addOnCompleteListener { task ->
                                 if (task.isSuccessful) {
-                                    navController.navigate(DestinasiHome.route)
+                                    navController.navigate(DestinasiUtama.route)
                                     Toast.makeText(context, "Login success", Toast.LENGTH_SHORT)
                                         .show()
                                 } else {

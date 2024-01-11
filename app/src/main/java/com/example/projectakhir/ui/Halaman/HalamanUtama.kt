@@ -52,7 +52,7 @@ fun HalamanUtama(
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ) {
             Button(
-                onClick = { },
+                onClick = onCustomerClick,
                 modifier = Modifier
                     .weight(1f)
                     .fillMaxHeight()
@@ -62,14 +62,5 @@ fun HalamanUtama(
         }
 
         Spacer(modifier = Modifier.height(20.dp))
-
-        Button(
-            onClick = onCustomerClick,
-            modifier = Modifier
-                .fillMaxWidth()
-                .height(72.dp)
-        ) {
-            Text("DATA PINJAMAN")
-        }
     }
 }

@@ -16,8 +16,8 @@ import com.example.projectakhir.ui.EditCustomer.EditDestinationCustomer
 import com.example.projectakhir.ui.EditCustomer.EditScreenCustomer
 import com.example.projectakhir.ui.Halaman.DestinasiHome
 import com.example.projectakhir.ui.Halaman.DestinasiUtama
+import com.example.projectakhir.ui.Halaman.HalamanHome
 import com.example.projectakhir.ui.Halaman.HalamanUtama
-import com.example.projectakhir.ui.Halaman.LoginScreen
 import com.example.projectakhir.ui.HomeCustomer.CustomerScreen
 import com.example.projectakhir.ui.HomeCustomer.DestinasiHomeCustomer
 
@@ -29,9 +29,8 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
         modifier = Modifier
     ) {
         composable(DestinasiHome.route) {
-            LoginScreen(
-                navController
-            )
+            HalamanHome(
+                navController)
         }
 
         composable(DestinasiUtama.route) {
