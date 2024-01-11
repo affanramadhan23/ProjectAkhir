@@ -1,5 +1,4 @@
-package com.example.projectakhir.ui.Halaman
-
+package com.example.projectakhir.ui
 
 import android.widget.Toast
 import androidx.compose.foundation.Image
@@ -47,10 +46,9 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 
-
-object DestinasiHome : DestinasiNavigasi {
-    override val route = "Home"
-    override val titleRes = "Pilih"
+object DestinasiLogin : DestinasiNavigasi {
+    override val route = "Login"
+    override val titleRes = "LoginP"
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
