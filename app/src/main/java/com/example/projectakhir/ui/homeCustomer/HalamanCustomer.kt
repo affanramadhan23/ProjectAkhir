@@ -65,7 +65,7 @@ fun CustomerScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick = navigateToItemEntryCustomer,
+                onClick = { navigateToItemEntryCustomer() },
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(18.dp)
             ) {

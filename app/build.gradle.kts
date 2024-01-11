@@ -79,4 +79,8 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.6.1")
     implementation("androidx.navigation:navigation-compose:2.7.5")
+    implementation("com.jakewharton.threetenabp:threetenabp:1.2.1")
+    implementation("com.google.firebase:firebase-auth")
+    implementation(platform("com.google.firebase:firebase-bom:32.7.0"))
+    implementation("androidx.compose.material3:material3:1.1.0-alpha08")
 }

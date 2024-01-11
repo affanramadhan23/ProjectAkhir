@@ -29,7 +29,7 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
         modifier = Modifier
     ) {
         composable(DestinasiHome.route) {
-            HalamanHome(    navController)
+            HalamanHome(navController)
         }
 
         composable(DestinasiUtama.route) {

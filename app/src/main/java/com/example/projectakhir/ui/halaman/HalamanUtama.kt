@@ -17,16 +17,19 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.projectakhir.navigation.DestinasiNavigasi
 import com.example.projectakhir.R
+import com.example.projectakhir.navigation.DestinasiNavigasi
+import androidx.navigation.compose.rememberNavController
+import androidx.navigation.NavHostController
+
 
 object DestinasiUtama : DestinasiNavigasi {
-    override val route = "Item"
-    override val titleRes = "Pilih"
+    override val route = "Item Customer"
+    override val titleRes = "Pilih Customer "
 }
 @Composable
 fun HalamanUtama(
-    onCustomerClick: () -> Unit,
+    onCustomerClick: () -> Unit
 ) {
     Column(
         modifier = Modifier

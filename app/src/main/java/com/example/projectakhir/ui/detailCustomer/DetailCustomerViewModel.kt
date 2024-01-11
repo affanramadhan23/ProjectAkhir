@@ -18,7 +18,7 @@ class DetailCustomerViewModel(
     private val repository: CustomerRepository
 ) : ViewModel() {
     companion object {
-        private const val TIMEOUT_MILLIS = 6_000L
+        private const val TIMEOUT_MILLIS = 5_000L
     }
     val customerId: String = checkNotNull(savedStateHandle[DetailDestinationCustomer.customerId])
 
