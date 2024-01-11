@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "477307794510",
-    "project_id": "pinjolfirebase-6beb4",
-    "storage_bucket": "pinjolfirebase-6beb4.appspot.com"
+    "project_number": "816674152025",
+    "project_id": "projectakhir-e40a8",
+    "storage_bucket": "projectakhir-e40a8.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:477307794510:android:76dbcf85265aa8a219ff1f",
+        "mobilesdk_app_id": "1:816674152025:android:ac66a9207260a62ae21b48",
         "android_client_info": {
           "package_name": "com.example.projectakhir"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCDl0Vy_Ubuo__G9kAQ7uzJiUN-rLDC7Cs"
+          "current_key": "AIzaSyBVco6ktWvFmTFM4sdAhuwvzZ5NKHgNnE8"
         }
       ],
       "services": {
