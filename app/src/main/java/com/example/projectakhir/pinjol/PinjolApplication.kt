@@ -1,8 +1,9 @@
-package com.example.projectakhir.Pinjol
+package com.example.projectakhir.pinjol
 
 import android.app.Application
-import com.example.projectakhir.Data.AppContainer
-import com.example.projectakhir.Data.pinjolContainer
+import com.example.projectakhir.data.AppContainer
+import com.example.projectakhir.data.PinjolContainer
+
 
 class PinjolApplication : Application() {
         lateinit var container: AppContainer
@@ -10,6 +11,6 @@ class PinjolApplication : Application() {
         override fun onCreate() {
             super.onCreate()
 
-            container = pinjolContainer()
+            container = PinjolContainer()
         }
 }

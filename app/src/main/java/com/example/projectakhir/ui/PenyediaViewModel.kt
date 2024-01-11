@@ -5,11 +5,11 @@ import androidx.lifecycle.createSavedStateHandle
 import androidx.lifecycle.viewmodel.CreationExtras
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
-import com.example.projectakhir.Pinjol.PinjolApplication
-import com.example.projectakhir.ui.AddCustomer.AddCustomerViewModel
-import com.example.projectakhir.ui.DetailCustomer.DetailCustomerViewModel
-import com.example.projectakhir.ui.EditCustomer.EditCustomerViewModel
-import com.example.projectakhir.ui.HomeCustomer.HalamanCustomerViewModel
+import com.example.projectakhir.pinjol.PinjolApplication
+import com.example.projectakhir.ui.addCustomer.AddCustomerViewModel
+import com.example.projectakhir.ui.detailCustomer.DetailCustomerViewModel
+import com.example.projectakhir.ui.editCustomer.EditCustomerViewModel
+import com.example.projectakhir.ui.homeCustomer.HalamanCustomerViewModel
 
 fun CreationExtras.aplikasiPinjol(): PinjolApplication =
     (this[ViewModelProvider.AndroidViewModelFactory.APPLICATION_KEY] as PinjolApplication)

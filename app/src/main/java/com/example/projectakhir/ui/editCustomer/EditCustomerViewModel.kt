@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.EditCustomer
+package com.example.projectakhir.ui.editCustomer
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -6,7 +6,7 @@ import androidx.compose.runtime.setValue
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.projectakhir.Data.CustomerRepository
+import com.example.projectakhir.data.CustomerRepository
 import com.example.projectakhir.ui.AddEventCustomer
 import com.example.projectakhir.ui.AddUIStateCustomer
 import com.example.projectakhir.ui.toCustomer

@@ -1,4 +1,4 @@
-package com.example.projectakhir.Navigation
+package com.example.projectakhir.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -8,18 +8,18 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
-import com.example.projectakhir.ui.AddCustomer.AddCustomer
-import com.example.projectakhir.ui.AddCustomer.DestinasiEntryCustomer
-import com.example.projectakhir.ui.DetailCustomer.DetailDestinationCustomer
-import com.example.projectakhir.ui.DetailCustomer.DetailScreenCustomer
-import com.example.projectakhir.ui.EditCustomer.EditDestinationCustomer
-import com.example.projectakhir.ui.EditCustomer.EditScreenCustomer
-import com.example.projectakhir.ui.Halaman.DestinasiHome
-import com.example.projectakhir.ui.Halaman.DestinasiUtama
-import com.example.projectakhir.ui.Halaman.HalamanHome
-import com.example.projectakhir.ui.Halaman.HalamanUtama
-import com.example.projectakhir.ui.HomeCustomer.CustomerScreen
-import com.example.projectakhir.ui.HomeCustomer.DestinasiHomeCustomer
+import com.example.projectakhir.ui.addCustomer.AddCustomer
+import com.example.projectakhir.ui.addCustomer.DestinasiEntryCustomer
+import com.example.projectakhir.ui.detailCustomer.DetailDestinationCustomer
+import com.example.projectakhir.ui.detailCustomer.DetailScreenCustomer
+import com.example.projectakhir.ui.editCustomer.EditDestinationCustomer
+import com.example.projectakhir.ui.editCustomer.EditScreenCustomer
+import com.example.projectakhir.ui.halaman.DestinasiHome
+import com.example.projectakhir.ui.halaman.DestinasiUtama
+import com.example.projectakhir.ui.halaman.HalamanHome
+import com.example.projectakhir.ui.halaman.HalamanUtama
+import com.example.projectakhir.ui.homeCustomer.CustomerScreen
+import com.example.projectakhir.ui.homeCustomer.DestinasiHomeCustomer
 
 @Composable
 fun PengelolaHalaman(navController: NavHostController = rememberNavController()) {
@@ -29,8 +29,7 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
         modifier = Modifier
     ) {
         composable(DestinasiHome.route) {
-            HalamanHome(
-                navController)
+            HalamanHome(    navController)
         }
 
         composable(DestinasiUtama.route) {

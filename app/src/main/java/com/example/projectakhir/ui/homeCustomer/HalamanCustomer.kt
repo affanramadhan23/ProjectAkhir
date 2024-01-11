@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.HomeCustomer
+package com.example.projectakhir.ui.homeCustomer
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
@@ -33,14 +33,14 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.projectakhir.Navigation.DestinasiNavigasi
+import com.example.projectakhir.navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
 import com.example.projectakhir.ui.CustomerTopAppBar
 import com.example.projectakhir.ui.PenyediaViewModel
 
 
 object DestinasiHomeCustomer : DestinasiNavigasi {
-    override val route = "home"
+    override val route = "home Customer"
     override val titleRes = "Customer"
 }
 
@@ -65,7 +65,7 @@ fun CustomerScreen(
         },
         floatingActionButton = {
             FloatingActionButton(
-                onClick ={ navigateToItemEntryCustomer() },
+                onClick = navigateToItemEntryCustomer,
                 shape = MaterialTheme.shapes.medium,
                 modifier = Modifier.padding(18.dp)
             ) {
@@ -76,7 +76,7 @@ fun CustomerScreen(
             }
         }
     ) { innerPadding ->
-        val uiStateCustomer by viewModel.homeUIState.collectAsState()
+        val uiStateCustomer by viewModel.homeUIStateCustomer.collectAsState()
         BodyHomeCustomer(
             itemCustomer = uiStateCustomer.listCustomer,
             modifier = Modifier
@@ -98,7 +98,7 @@ fun BodyHomeCustomer(
     ) {
         if (itemCustomer.isEmpty()) {
             Text(
-                text = "Tidak ada data Anggota",
+                text = "Tidak ada data Customer",
                 textAlign = TextAlign.Center,
                 style = MaterialTheme.typography.titleLarge
             )

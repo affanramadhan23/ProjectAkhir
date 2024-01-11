@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.AddCustomer
+package com.example.projectakhir.ui.addCustomer
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -21,7 +21,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.projectakhir.Navigation.DestinasiNavigasi
+import com.example.projectakhir.navigation.DestinasiNavigasi
 import com.example.projectakhir.ui.AddEventCustomer
 import com.example.projectakhir.ui.AddUIStateCustomer
 import com.example.projectakhir.ui.CustomerTopAppBar
@@ -52,7 +52,7 @@ object DestinasiEntryCustomer : DestinasiNavigasi {
                     navigateUp = navigateBack
                 )
             }
-        ) { innerPadding ->
+            ) { innerPadding ->
             EntryBodyCustomer(
                 addUIStateCustomer = addCustomerViewModel.addUIStateCustomer,
                 onCustomerValueChange = addCustomerViewModel::updateAddUIStateCustomer,
@@ -85,7 +85,6 @@ object DestinasiEntryCustomer : DestinasiNavigasi {
                 onValueChangeCustomer = onCustomerValueChange,
                 modifier = Modifier.fillMaxWidth()
             )
-
             Button(
                 onClick = onSaveClickCustomer,
                 shape = MaterialTheme.shapes.small,

@@ -1,4 +1,4 @@
-package com.example.projectakhir.Data
+package com.example.projectakhir.data
 
 import android.content.ContentValues
 import android.util.Log
@@ -52,9 +52,9 @@ class CustomerRepositoryImpl(private val firestore: FirebaseFirestore) : Custome
         firestore.collection("Customer").document(customerId).delete().await()
     }
 
-    override fun getCustomerById(anggotaId: String): Flow<Customer> {
+    override fun getCustomerById(customerId: String): Flow<Customer> {
         return flow {
-            val snapshot = firestore.collection("Anggota").document(anggotaId).get().await()
+            val snapshot = firestore.collection("Customer").document(customerId).get().await()
             val customer = snapshot.toObject(Customer::class.java)
             emit(customer!!)
         }.flowOn(Dispatchers.IO)

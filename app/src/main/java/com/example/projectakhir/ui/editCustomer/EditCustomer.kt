@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.EditCustomer
+package com.example.projectakhir.ui.editCustomer
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
@@ -10,8 +10,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.projectakhir.Navigation.DestinasiNavigasi
-import com.example.projectakhir.ui.AddCustomer.EntryBodyCustomer
+import com.example.projectakhir.navigation.DestinasiNavigasi
+import com.example.projectakhir.ui.addCustomer.EntryBodyCustomer
 import com.example.projectakhir.ui.PenyediaViewModel
 import kotlinx.coroutines.launch
 

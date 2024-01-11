@@ -1,4 +1,4 @@
-package com.example.projectakhir.ui.DetailCustomer
+package com.example.projectakhir.ui.detailCustomer
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -32,7 +32,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.projectakhir.Navigation.DestinasiNavigasi
+import com.example.projectakhir.navigation.DestinasiNavigasi
 import com.example.projectakhir.model.Customer
 import com.example.projectakhir.ui.CustomerTopAppBar
 import com.example.projectakhir.ui.DetailUIStateCustomer
@@ -116,7 +116,7 @@ private fun ItemDetailsBodyCustomer(
         }
 
         if (deleteConfirmationRequiredCustomer) {
-            DeleteConfirmationDialog(
+            DeleteConfirmationDialogCustomer(
                 onDeleteConfirmCustomer = {
                     deleteConfirmationRequiredCustomer = false
                     onDeleteCustomer()
@@ -208,7 +208,7 @@ private fun ItemDetailsRowCustomer(
 }
 
 @Composable
-private fun DeleteConfirmationDialog(
+private fun DeleteConfirmationDialogCustomer(
     onDeleteConfirmCustomer: () -> Unit,
     onDeleteCancelCustomer: () -> Unit,
     modifier: Modifier = Modifier

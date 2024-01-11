@@ -1,4 +1,4 @@
-package com.example.projectakhir.Navigation
+package com.example.projectakhir.navigation
 
 interface DestinasiNavigasi  {
     val route: String

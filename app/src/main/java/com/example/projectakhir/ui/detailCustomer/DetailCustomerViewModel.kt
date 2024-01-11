@@ -1,9 +1,9 @@
-package com.example.projectakhir.ui.DetailCustomer
+package com.example.projectakhir.ui.detailCustomer
 
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.projectakhir.Data.CustomerRepository
+import com.example.projectakhir.data.CustomerRepository
 import com.example.projectakhir.ui.DetailUIStateCustomer
 import com.example.projectakhir.ui.toDetailCustomer
 import kotlinx.coroutines.flow.SharingStarted

@@ -1,9 +1,8 @@
-package com.example.projectakhir.ui.Halaman
+package com.example.projectakhir.ui.halaman
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -18,7 +17,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.projectakhir.Navigation.DestinasiNavigasi
+import com.example.projectakhir.navigation.DestinasiNavigasi
 import com.example.projectakhir.R
 
 object DestinasiUtama : DestinasiNavigasi {
@@ -60,7 +59,5 @@ fun HalamanUtama(
                 Text("CUSTOMER")
             }
         }
-
-        Spacer(modifier = Modifier.height(20.dp))
     }
 }
