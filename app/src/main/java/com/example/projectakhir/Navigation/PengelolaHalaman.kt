@@ -12,6 +12,8 @@ import com.example.projectakhir.ui.AddCustomer.AddCustomer
 import com.example.projectakhir.ui.AddCustomer.DestinasiEntryCustomer
 import com.example.projectakhir.ui.DetailCustomer.DetailDestinationCustomer
 import com.example.projectakhir.ui.DetailCustomer.DetailScreenCustomer
+import com.example.projectakhir.ui.EditCustomer.EditDestinationCustomer
+import com.example.projectakhir.ui.EditCustomer.EditScreenCustomer
 import com.example.projectakhir.ui.Halaman.DestinasiHome
 import com.example.projectakhir.ui.Halaman.DestinasiUtama
 import com.example.projectakhir.ui.Halaman.HalamanHome
@@ -62,7 +64,10 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
                 backStackEntry.arguments?.getString(DetailDestinationCustomer.customerId)
             customerId?.let {
                 DetailScreenCustomer(
-                    navigateToEditItemCustomer = {},
+                    navigateToEditItemCustomer = {
+                        navController.navigate("${EditDestinationCustomer.route}/$customerId")
+                        println("anggotaId: $customerId")
+                    },
                     navigateBack = {navController.popBackStack()})
             }
         }
@@ -70,6 +75,19 @@ fun PengelolaHalaman(navController: NavHostController = rememberNavController())
             AddCustomer(
                 navigateBack = { navController.popBackStack() }
             )
+        }
+        composable(
+            route = EditDestinationCustomer.routeWithArgs,
+            arguments = listOf(navArgument(EditDestinationCustomer.customerId) {
+                type = NavType.StringType
+            })
+        ) { backStackEntry ->
+            val customerId = backStackEntry.arguments?.getString(EditDestinationCustomer.customerId)
+            customerId?.let {
+                EditScreenCustomer(
+                    navigateBackCustomer = { navController.popBackStack() },
+                    onNavigateUpCustomer = { navController.navigateUp() })
+            }
         }
     }
 }
